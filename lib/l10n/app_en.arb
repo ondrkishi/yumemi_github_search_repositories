@@ -3,5 +3,11 @@
   "textFieldHintText": "Search Word Hear",
   "totalCountTitle": "count",
   "failedToRetrieveDataError": "Failed To Retrieve Data",
-  "moreButtonText": "more"
+  "moreButtonText": "more",
+  "detailPageTitle": "Detailed information",
+  "language": "Language",
+  "star": "Star",
+  "watcher": "Watcher",
+  "fork": "Fork",
+  "issue": "Issue"
 }

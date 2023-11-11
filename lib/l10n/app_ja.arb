@@ -3,5 +3,11 @@
   "textFieldHintText": "検索ワードを入力してください",
   "totalCountTitle": "件数",
   "failedToRetrieveDataError": "データの取得に失敗しました",
-  "moreButtonText": "さらに表示する"
+  "moreButtonText": "さらに表示する",
+  "detailPageTitle": "詳細情報",
+  "language": "言語",
+  "star": "スター",
+  "watcher": "ウォッチャー",
+  "fork": "フォーク",
+  "issue": "イシュー"
 }
