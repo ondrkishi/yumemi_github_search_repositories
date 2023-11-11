@@ -9,5 +9,8 @@
   "star": "スター",
   "watcher": "ウォッチャー",
   "fork": "フォーク",
-  "issue": "イシュー"
+  "issue": "イシュー",
+  "themeModeSystem": "システム設定に従う",
+  "themeModLight": "ライトモード",
+  "themeModeDark": "ダークモード"
 }
