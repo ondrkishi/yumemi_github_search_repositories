@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yumemi_github_search_repositories/model/page/page_definition.dart';
 import 'package:yumemi_github_search_repositories/model/search_result_data.dart';
 import 'package:yumemi_github_search_repositories/view_model/search_result.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -154,7 +155,7 @@ class SearchPage extends ConsumerWidget {
       title: Text(data.repositoryName),
       subtitle: Text(language, style: const TextStyle(color: Colors.grey)),
       trailing: const Icon(Icons.navigate_next),
-      onTap: () => null, // 詳細画面は別コミットで実装する
+      onTap: () => Navigator.of(context).pushNamed(PageDefinition.detailPage.name, arguments: data),
     );
   }
 }
