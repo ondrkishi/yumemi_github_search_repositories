@@ -10,6 +10,7 @@ class SearchResultApiClient {
     if (statusCode == 200) {
       return jsonDecode(res.body);
     } else {
+      // statusCode=200以外であれば例外をthrowする
       throw Exception('[SearchGitHubRepository.fetchSearchResult] API STATUS ERROR statusCode = $statusCode');
     }
   }
