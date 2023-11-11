@@ -9,5 +9,8 @@
   "star": "Star",
   "watcher": "Watcher",
   "fork": "Fork",
-  "issue": "Issue"
+  "issue": "Issue",
+  "themeModeSystem": "Follow system settings",
+  "themeModLight": "Light mode",
+  "themeModeDark": "Dark mode"
 }

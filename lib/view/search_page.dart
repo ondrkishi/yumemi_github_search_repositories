@@ -4,6 +4,7 @@ import 'package:yumemi_github_search_repositories/model/page/page_definition.dar
 import 'package:yumemi_github_search_repositories/model/search_result_data.dart';
 import 'package:yumemi_github_search_repositories/view_model/search_result.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:yumemi_github_search_repositories/view_model/theme_mode.dart';
 
 ///
 /// 検索画面のUI
@@ -16,10 +17,39 @@ class SearchPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(AppLocalizations.of(context)!.searchPageTitle),
+        actions: [_buildChangeThemeModeMenu(ref)],
       ),
       body: _buildSearchBarAndResult(context, ref),
+    );
+  }
+
+  /// テーマモードを変更するメニューを表示するアイコン
+  Widget _buildChangeThemeModeMenu(WidgetRef ref) {
+    final themeMode = ref.watch(themeModeStateProvider.notifier);
+
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: PopupMenuButton<ThemeMode>(
+        icon: const Icon(Icons.settings_brightness),
+        // themeMode.state に選択された 外観モード をセットする
+        onSelected: (ThemeMode selectedThemeMode) => themeMode.update(selectedThemeMode),
+
+        itemBuilder: (context) => <PopupMenuEntry<ThemeMode>>[
+          PopupMenuItem(
+            value: ThemeMode.system,
+            child: Text(AppLocalizations.of(context)!.themeModeSystem),
+          ),
+          PopupMenuItem(
+            value: ThemeMode.light,
+            child: Text(AppLocalizations.of(context)!.themeModLight),
+          ),
+          PopupMenuItem(
+            value: ThemeMode.dark,
+            child: Text(AppLocalizations.of(context)!.themeModeDark),
+          ),
+        ],
+      ),
     );
   }
 

@@ -4,16 +4,19 @@ import 'package:yumemi_github_search_repositories/model/page/page_definition.dar
 import 'package:yumemi_github_search_repositories/view/search_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:yumemi_github_search_repositories/view_model/theme_mode.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeModeStateProvider);
+
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -25,10 +28,9 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // English, no country code
         Locale('ja', ''), // Japanese, no country code
       ],
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: themeMode,
       home: const SearchPage(),
       routes: routes,
     );
