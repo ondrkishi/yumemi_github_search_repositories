@@ -25,9 +25,7 @@ class SearchResult extends _$SearchResult {
     } else {
       try {
         final res = await _repo.fetchSearchResult(_searchWord, _page);
-        if (res != null) {
-          state = AsyncData(res);
-        }
+        state = AsyncData(res);
       } catch (e, stack) {
         state = AsyncError(e, stack);
       }
@@ -41,10 +39,8 @@ class SearchResult extends _$SearchResult {
 
     try {
       final res = await _repo.fetchSearchResult(_searchWord, _page);
-      if (res != null) {
-        final List<SearchResultItemData> upDatedItemList = [...state.value?.items ?? [], ...res.items];
-        state = AsyncData(res.copyWith(items: upDatedItemList));
-      }
+      final List<SearchResultItemData> upDatedItemList = [...state.value?.items ?? [], ...res.items];
+      state = AsyncData(res.copyWith(items: upDatedItemList));
     } catch (e, stack) {
       state = AsyncError(e, stack);
     }
