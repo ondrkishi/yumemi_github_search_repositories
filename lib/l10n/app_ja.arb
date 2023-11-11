@@ -1,3 +1,7 @@
 {
-  "searchPageTitle": "検索"
+  "searchPageTitle": "検索",
+  "textFieldHintText": "検索ワードを入力してください",
+  "totalCountTitle": "件数",
+  "failedToRetrieveDataError": "データの取得に失敗しました",
+  "moreButtonText": "さらに表示する"
 }

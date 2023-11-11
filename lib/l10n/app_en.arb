@@ -1,3 +1,7 @@
 {
-  "searchPageTitle": "Search Page"
+  "searchPageTitle": "Search Page",
+  "textFieldHintText": "Search Word Hear",
+  "totalCountTitle": "count",
+  "failedToRetrieveDataError": "Failed To Retrieve Data",
+  "moreButtonText": "more"
 }
